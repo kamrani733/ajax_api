@@ -111,5 +111,9 @@ td.table-col1 {
   background: var(--blueLight);
   color: white;
   border-radius: 6px;
- 
+}
+
+.selectWord,
+.selectPsd {
+  cursor: pointer;
 }
