@@ -75,10 +75,10 @@ $(document).ready(function () {
       success: function (data) {
         const showresults = document.getElementById("showresults");
         const countItems = Object.keys(data.items);
-
+        const sufix = document.getElementById("sufix-file");
+        sufix.innerHTML = "";
         for (let i = 0; i < countItems.length; i++) {
           console.log(data.items[`${countItems[i]}`]);
-          const sufix = document.getElementById("sufix-file");
           sufix.innerHTML += `
           <img class="showDetals" onclick="showDetailMini(${
             data.items[`${countItems[i]}`]
@@ -141,17 +141,19 @@ $(document).ready(function () {
       url: "https://541.ir/fronttest/fronttest.php",
       data: "param=docx",
       dataType: "json",
+
       success: function (data) {
         const showresults = document.getElementById("showresults");
         const countItems = Object.keys(data.items);
-
+        const sufix = document.getElementById("sufix-file");
+        sufix.innerHTML = "";
         for (let i = 0; i < countItems.length; i++) {
           console.log(data.items[`${countItems[i]}`]);
-          const sufix = document.getElementById("sufix-file");
+
           sufix.innerHTML += `
-        <img class="showDetals" onclick="showDetailMini(${
-          data.items[`${countItems[i]}`]
-        })" src="./assets/image/wordDetail2.png" alt="" /> `;
+          <img class="showDetals" onclick="showDetailMini(${
+            data.items[`${countItems[i]}`]
+          })" src="./assets/image/wordDetail2.png" alt="" /> `;
         }
         showresults.innerHTML = `
         <table>
