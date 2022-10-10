@@ -12,9 +12,9 @@
     <div class="container">
       <div class="sufix-section">
         <div class="sufix">
-          <img class="selectai" src="./assets/image/ai.png" alt="" />
-          <img class="selectWord" src="./assets/image/word.png" alt="" />
-          <img class="selectPsd" src="./assets/image/ps.png" alt="" />
+          <img class="selcteSuffix" src="./assets/image/ai.png" alt="" />
+          <img class="selcteSuffix" onclick="selectedType(`docx`)" src="./assets/image/word.png" alt="" />
+          <img class="selcteSuffix" onclick="selectedType(`psd`)" src="./assets/image/ps.png" alt="" />
         </div>
         <div class="sufix-file">
           <div class="selected-file">
@@ -23,7 +23,6 @@
           <div id="sufix-file" class="unSelected-file"></div>
         </div>
       </div>
-
       <div class="sufix-details">
         <table id="showresults"></table>
         <div class="icons">

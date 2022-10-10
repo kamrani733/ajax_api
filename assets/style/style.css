@@ -113,8 +113,7 @@ td.table-col1 {
   border-radius: 6px;
 }
 
-.selectWord,
-.selectPsd {
+.selcteSuffix {
   cursor: pointer;
 }
 .sufix-section {
