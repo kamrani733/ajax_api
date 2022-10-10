@@ -1,3 +1,5 @@
+const sufix = document.getElementById("sufix-file");
+const showresults = document.getElementById("showresults");
 $(document).ready(function () {
   $.ajax({
     type: "POST",
@@ -5,12 +7,8 @@ $(document).ready(function () {
     data: "param=main",
     dataType: "json",
     success: function (data) {
-      const showresults = document.getElementById("showresults");
       const countItems = Object.keys(data.items);
-
-      for (let i = 0; i < countItems.length; i++) {
-        console.log(data.items[`${countItems[i]}`]);
-        const sufix = document.getElementById("sufix-file");
+      for (let i = 0; i < 2; i++) {
         sufix.innerHTML += `
         <img class="showDetals" onclick="showDetailMini(${
           data.items[`${countItems[i]}`]
@@ -67,19 +65,15 @@ $(document).ready(function () {
   });
 });
 function selectedType(id) {
-  console.log(id);
   $.ajax({
     type: "POST",
     url: "https://541.ir/fronttest/fronttest.php",
     data: `param=${id}`,
     dataType: "json",
     success: function (data) {
-      const showresults = document.getElementById("showresults");
       const countItems = Object.keys(data.items);
-      const sufix = document.getElementById("sufix-file");
       sufix.innerHTML = "";
-      for (let i = 0; i < countItems.length; i++) {
-        console.log(data.items[`${countItems[i]}`]);
+      for (let i = 0; i < 2; i++) {
         sufix.innerHTML += `
           <img class="showDetals" onclick="showDetailMini(${
             data.items[`${countItems[i]}`]
@@ -137,14 +131,12 @@ function selectedType(id) {
   });
 }
 function showDetailMini(id) {
-  console.log(id);
   $.ajax({
     type: "POST",
     url: "https://541.ir/fronttest/fronttest.php",
     data: `param=${id}`,
     dataType: "json",
     success: function (data) {
-      const showresults = document.getElementById("showresults");
       showresults.innerHTML = `
       <table>
         <tr class="table-head">
