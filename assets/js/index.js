@@ -7,16 +7,15 @@ $(document).ready(function () {
     success: function (data) {
       const showresults = document.getElementById("showresults");
       const sufix = document.getElementById("sufix-file");
-      console.log(data);
-      console.log(data.items); 
+      console.log(Object.keys(data.items));
       sufix.innerHTML = `
         <div class="selected-file">
         <img src="./assets/image/wordDetail.png" alt="" />
       </div>
       <div class="unSelected-file">
-        <img id="${data.items[0]}" src="./assets/image/wordDetail2.png" alt="" />
+        <img id="${data.items["فایل 1"]}" src="./assets/image/wordDetail2.png" alt="" />
         <img src="./assets/image/wordDetail3.png" alt="" />
-        <img src="./assets/image/wordDetail3.png" alt="" />
+        <img class="loadmore" src="./assets/image/wordDetail3.png" alt="" />
       </div>
         `;
       showresults.innerHTML = `
@@ -77,7 +76,6 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         const showresults = document.getElementById("showresults");
-        console.log(data);
         showresults.innerHTML = `
         <table>
           <tr class="table-head">
@@ -137,7 +135,6 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         const showresults = document.getElementById("showresults");
-        console.log(data);
         showresults.innerHTML = `
         <table>
           <tr class="table-head">
