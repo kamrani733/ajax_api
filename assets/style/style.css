@@ -50,7 +50,7 @@ a {
   width: 85%;
 }
 .sufix-details {
-  width: 50%;
+  width: 70%;
 }
 .sufix-buy {
   width: 20%;
@@ -116,4 +116,26 @@ td.table-col1 {
 .selectWord,
 .selectPsd {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  .unSelected-file img {
+    width: 18%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .unSelected-file img {
+    width: 13%;
+  }
+  .sufix-file {
+    width: 30%;
+  }
+  .col1 {
+    line-height: 12px;
+    font-size: 9px;
+  }
+  td.table-col1 {
+    font-size: 12px;
+}
 }
