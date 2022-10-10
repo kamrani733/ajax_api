@@ -6,14 +6,15 @@ $(document).ready(function () {
     dataType: "json",
     success: function (data) {
       const showresults = document.getElementById("showresults");
-      const sufix = document.getElementById("sufix-file");
       const countItems = Object.keys(data.items);
-      console.log(countItems);
+
       for (let i = 0; i < countItems.length; i++) {
-        sufix.innerHTML = `
-          <img class="showDetals" onclick="showDetailMini(${data.items["فایل 1"]})" src="./assets/image/wordDetail2.png" alt="" />
-          <img class="showDetals" onclick="showDetailMini(${data.items["فایل 2"]})" src="./assets/image/wordDetail2.png" alt="" />
-          <img class="loadMore" src="./assets/image/wordDetail2.png" alt="" />`;
+        console.log(data.items[`${countItems[i]}`]);
+        const sufix = document.getElementById("sufix-file");
+        sufix.innerHTML += `
+        <img class="showDetals" onclick="showDetailMini(${
+          data.items[`${countItems[i]}`]
+        })" src="./assets/image/wordDetail2.png" alt="" /> `;
       }
 
       showresults.innerHTML = `
@@ -73,14 +74,15 @@ $(document).ready(function () {
       dataType: "json",
       success: function (data) {
         const showresults = document.getElementById("showresults");
-        const sufix = document.getElementById("sufix-file");
         const countItems = Object.keys(data.items);
-        console.log(countItems);
+
         for (let i = 0; i < countItems.length; i++) {
-          sufix.innerHTML = `
-            <img class="showDetals" onclick="showDetailMini(${data.items["فایل 3"]})" src="./assets/image/wordDetail2.png" alt="" />
-            <img class="showDetals" onclick="showDetailMini(${data.items["فایل 4"]})" src="./assets/image/wordDetail2.png" alt="" />
-            <img class="loadMore" src="./assets/image/wordDetail2.png" alt="" />`;
+          console.log(data.items[`${countItems[i]}`]);
+          const sufix = document.getElementById("sufix-file");
+          sufix.innerHTML += `
+          <img class="showDetals" onclick="showDetailMini(${
+            data.items[`${countItems[i]}`]
+          })" src="./assets/image/wordDetail2.png" alt="" /> `;
         }
         showresults.innerHTML = `
         <table>
@@ -140,18 +142,17 @@ $(document).ready(function () {
       data: "param=docx",
       dataType: "json",
       success: function (data) {
-        console.log(data);
-        console.log(data.items);
-        const sufix = document.getElementById("sufix-file");
-        const countItems = Object.keys(data.items);
-        console.log(countItems);
-        for (let i = 0; i < countItems.length; i++) {
-          sufix.innerHTML = `
-            <img class="showDetals" onclick="showDetailMini(${data.items["فایل 1"]})" src="./assets/image/wordDetail2.png" alt="" />
-            <img class="showDetals" onclick="showDetailMini(${data.items["فایل 2"]})" src="./assets/image/wordDetail2.png" alt="" />
-            <img class="loadMore" src="./assets/image/wordDetail2.png" alt="" />`;
-        }
         const showresults = document.getElementById("showresults");
+        const countItems = Object.keys(data.items);
+
+        for (let i = 0; i < countItems.length; i++) {
+          console.log(data.items[`${countItems[i]}`]);
+          const sufix = document.getElementById("sufix-file");
+          sufix.innerHTML += `
+        <img class="showDetals" onclick="showDetailMini(${
+          data.items[`${countItems[i]}`]
+        })" src="./assets/image/wordDetail2.png" alt="" /> `;
+        }
         showresults.innerHTML = `
         <table>
           <tr class="table-head">
