@@ -178,3 +178,17 @@ td.table-col1 {
     padding: unset;
   }
 }
+
+.loadMore {
+  opacity: 0.5;
+  position: relative;
+}
+
+.loadMore::after {
+  content: "...";
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0%;
+  font-size: 20px;
+}
