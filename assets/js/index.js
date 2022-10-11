@@ -140,7 +140,8 @@ function showDetailMini(id) {
       showresults.innerHTML = `
       <table>
         <tr class="table-head">
-          <th colspan="5">${data.title}</th>
+          <th colspan="5">
+          ${data.title}</th>
         </tr>
         <tr>
           <td class="table-col1">ناشر</td>
